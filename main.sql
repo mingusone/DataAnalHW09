@@ -159,4 +159,19 @@ REFERENCES "employees" ("emp_no");
 
 -- 7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
 
+    --Development is d005, sales is d007
+    select employees.emp_no, employees.last_name, employees.first_name, departments.dept_name 
+    from employees
+    inner join dept_emp
+    on dept_emp.emp_no = employees.emp_no
+    inner join departments
+    on dept_emp.dept_no = departments.dept_no
+    where departments.dept_no = 'd007'
+    or departments.dept_no = 'd005';
+
 -- 8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
+
+    select count(last_name), last_name from employees
+    group by last_name
+    order by last_name asc;
+    --Comment: These numbers seem awfully big. And who the heck has "300024" employees besides the US military?
