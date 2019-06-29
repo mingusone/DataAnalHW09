@@ -1,4 +1,5 @@
-﻿-- PART 1: Data Modeling ---
+﻿
+-- PART 1: Data Modeling ---
 -- Created ERD. See ERD.png in foler.
 
 -- PART 2: Data Engineering --
